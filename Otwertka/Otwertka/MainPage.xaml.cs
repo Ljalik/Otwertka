@@ -13,11 +13,15 @@ namespace Otwertka
         public MainPage()
         {
             InitializeComponent();
-
+            ProfileImage.Source = ImageSource.FromFile("Profil.jpg");
+            aboutlist.ItemSource = GetMenuList();
+            var homepage = typeof(Views.AboutPage);
             Detail = new NavigationPage(new News());
+            IsPresented = false;
         }
 
         private void Button_Clicked(object sender, EventArgs e)
+            public List<MasterMenuItems> GetMenuList()
         {
             Detail = new NavigationPage(new Comrads());
         }
