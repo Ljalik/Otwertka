@@ -14,26 +14,51 @@ namespace Otwertka
         {
             InitializeComponent();
             ProfileImage.Source = ImageSource.FromFile("Profil.jpg");
-            aboutlist.ItemSource = GetMenuList();
-            var homepage = typeof(Views.AboutPage);
-            Detail = new NavigationPage(new News());
+            aboutlist.ItemsSource = GetMenuList();
+            var homepage = typeof(View.AboutPage);
+            Detail = new NavigationPage((Page)Activator.CreateInstance(homepage));
             IsPresented = false;
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
-            public List<MasterMenuItems> GetMenuList()
+        public List<MasterMenuItems> GetMenuList()
         {
-            Detail = new NavigationPage(new Comrads());
+            var list = new List<MasterMenuItems>();
+            list.Add(new MasterMenuItems()
+            {
+                Text = "Minust",
+                Detail = "Lühike info",
+                ImagePath = "info.png",
+                TargetPage = typeof(View.AboutPage)
+            });
+            list.Add(new MasterMenuItems()
+            {
+                Text = "Minu kogemus",
+                Detail = "Natuke rohkem minu kogemisest",
+                ImagePath = "notepad.png",
+                TargetPage = typeof(View.ExperiencePage)
+            });
+            list.Add(new MasterMenuItems()
+            {
+                Text = "Minu oskused",
+                Detail = "Natuke rohkem minu oskustest",
+                ImagePath = "skills.png",
+                TargetPage = typeof(View.SkillsPage)
+            });
+            list.Add(new MasterMenuItems()
+            {
+                Text = "Minu võidud",
+                Detail = "Ma olen uhke!!!",
+                ImagePath = "nagradi.jpg",
+                TargetPage = typeof(View.ExperiencePage)
+            });
+            return list;
         }
-
-        private void Button_Clicked_1(object sender, EventArgs e)
-        {
-            Detail = new NavigationPage(new News());
-        }
-
         private void aboutlist_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            var SelectedMenuItems = (MasterMenuItems)e.SelectedItem;
+            Type selectedPage = SelectedMenuItems.TargetPage;
+            Detail = new NavigationPage((Page)Activator.CreateInstance(selectedPage));
+            IsPresented = false;
         }
     }
 }
+

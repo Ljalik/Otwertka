@@ -3,10 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Otwertka.View.ExperiencePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="Center" Margin="20">
+            <Label Text="Info minust" FontSize="20" TextColor="DarkOrchid" HorizontalTextAlignment="Center"></Label>
+            <Label Text="Siia pane pikk tekst ise endast!!" TextColor="DeepSkyBlue" HorizontalTextAlignment="Center"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
