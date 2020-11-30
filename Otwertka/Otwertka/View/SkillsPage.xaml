@@ -4,8 +4,7 @@
              x:Class="Otwertka.View.SkillsPage">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Margin="20">
-            <Image x:Name="profileImage"></Image>
-            <Label Text="Info minust" FontSize="20" TextColor="DarkOrchid" HorizontalTextAlignment="Center"></Label>
+            <Label Text="Minu skills " FontSize="20" TextColor="DarkOrchid" HorizontalTextAlignment="Center"></Label>
             <Label Text="Siia pane pikk tekst ise endast!!" TextColor="DeepSkyBlue" HorizontalTextAlignment="Center"></Label>
         </StackLayout>
     </ContentPage.Content>
