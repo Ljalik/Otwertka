@@ -7,6 +7,7 @@
         <ContentPage Title="Master" BackgroundColor="#b9f6ca">
             <ContentPage.Content>
                 <StackLayout Padding="5,30,5,5">
+                    <Label Text="Master Page Elemendid"></Label>
                     <Button Text="Товарищи" Clicked="Button_Clicked"></Button>
                     <Button Text="Новости" Clicked="Button_Clicked_1"></Button>
                 </StackLayout>
@@ -15,9 +16,20 @@
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>
-        <ContentPage>
+        <ContentPage Title="Menu" BackgroundColor="Blue" Padding="10">
             <ContentPage.Content>
-                <Label Text="DetailPage" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                <StackLayout Margin="10" Orientation="Vertical">
+                    <Image x:Name="ProfileImage"></Image>
+                    <ListView x:Name="aboutlist" ItemSelected="aboutlist_ItemSelected"
+                              <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding Text}" Detail="{Binding Detail}"
+                                       ImageSource="{Binding ImagePath}">
+                            </ImageCell>
+                        </DataTemplate>
+                        </ListView.ItemTemplate>
+                    <Label Text="DetailPage" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                </StackLayout>
             </ContentPage.Content>
         </ContentPage>
     </MasterDetailPage.Detail>

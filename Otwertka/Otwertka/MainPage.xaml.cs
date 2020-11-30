@@ -26,5 +26,10 @@ namespace Otwertka
         {
             Detail = new NavigationPage(new News());
         }
+
+        private void aboutlist_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+
+        }
     }
 }
